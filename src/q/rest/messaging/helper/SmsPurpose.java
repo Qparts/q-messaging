@@ -10,6 +10,22 @@ public enum SmsPurpose {
         }
     },
 
+    POSUBMIT("purchase-order-submit"){
+      @Override
+      public String getBody(String ...values){
+          String sender = values[0];
+          return "New purchase order from : " + sender + "  " + AppConstants.getPurchaseOrdersSubmitLink();
+      }
+    },
+
+    POACCEPT("purchase-order-accept"){
+        @Override
+        public String getBody(String ...values){
+            String sender = values[0];
+            return "Your Purchase order is accepted by: " + sender + ", please visit  " + AppConstants.getPurchaseOrdersSubmitLink();
+        }
+    },
+
     PASSRESET("password-reset") {
         @Override
         public String getBody(String ...values) {

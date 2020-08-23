@@ -42,7 +42,44 @@ public enum EmailPurpose {
             return "Tax Invoice - فاتورة ضريبية";
         }
     },
+    POSUBMIT("purchase-order-submit"){
+        @Override
+        public String getTemplatePath(){
+            return AppConstants.PURCHASE_ORDER_SUBMIT_TEMPLATE;
+        }
 
+        public Map<String,Object> getValuesMap(String ...values){
+            Map<String,Object> vmap = new HashMap<String, Object>();
+            vmap.put("firstName", values[0]);
+            vmap.put("from", values[1]);
+            vmap.put("link", AppConstants.getPurchaseOrdersSubmitLink());
+            return vmap;
+        }
+
+        @Override
+        public String getSubject() {
+            return "New Purchase Order";
+        }
+    },
+    POACCEPT("purchase-order-accept"){
+        @Override
+        public String getTemplatePath(){
+            return AppConstants.PURCHASE_ORDER_ACCEPT_TEMPLATE;
+        }
+
+        public Map<String,Object> getValuesMap(String ...values){
+            Map<String,Object> vmap = new HashMap<String, Object>();
+            vmap.put("firstName", values[0]);
+            vmap.put("from", values[1]);
+            vmap.put("link", AppConstants.getPurchaseOrdersSubmitLink());
+            return vmap;
+        }
+
+        @Override
+        public String getSubject() {
+            return "Purchase Order Accepted";
+        }
+    },
 
     SIGNUP("signup") {
         @Override
