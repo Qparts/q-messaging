@@ -71,13 +71,32 @@ public enum EmailPurpose {
             Map<String,Object> vmap = new HashMap<String, Object>();
             vmap.put("firstName", values[0]);
             vmap.put("from", values[1]);
-            vmap.put("link", AppConstants.getPurchaseOrdersSubmitLink());
+            vmap.put("link", AppConstants.getPurchaseOrdersSentLink());
             return vmap;
         }
 
         @Override
         public String getSubject() {
             return "Purchase Order Accepted";
+        }
+    },
+    POREFUSE("purchase-order-refuse"){
+        @Override
+        public String getTemplatePath(){
+            return AppConstants.PURCHASE_ORDER_REFUSE_TEMPLATE;
+        }
+
+        public Map<String,Object> getValuesMap(String ...values){
+            Map<String,Object> vmap = new HashMap<String, Object>();
+            vmap.put("firstName", values[0]);
+            vmap.put("from", values[1]);
+            vmap.put("link", AppConstants.getPurchaseOrdersSentLink());
+            return vmap;
+        }
+
+        @Override
+        public String getSubject() {
+            return "Purchase Order Refused";
         }
     },
 

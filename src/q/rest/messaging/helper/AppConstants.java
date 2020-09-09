@@ -21,6 +21,10 @@ public class AppConstants {
         return QVM_WEBSITE + "/app/received-purchase-orders";
     }
 
+    public final static String getPurchaseOrdersSentLink(){
+        return QVM_WEBSITE + "/app/sent-purchase-orders";
+    }
+
     public final static String REGISTRATION_COMPLETE_EMAIL_TEMPLATE = "email/registration-complete.vm";
     public final static String VENDOR_APPROVED_EMAIL_TEMPLATE = "email/vendor-approved.vm";
     public final static String SUBSCRIPTION_INVOICE_EMAIL_TEMPLATE = "email/subscription-invoice.vm";
@@ -29,6 +33,7 @@ public class AppConstants {
     public final static String REGISTRATION_CODE_TEMPLATE = "email/registration-code.vm";
     public final static String PURCHASE_ORDER_SUBMIT_TEMPLATE = "email/purchase-order-submit.vm";
     public final static String PURCHASE_ORDER_ACCEPT_TEMPLATE = "email/purchase-order-accept.vm";
+    public final static String PURCHASE_ORDER_REFUSE_TEMPLATE = "email/purchase-order-refuse.vm";
 
 
     public static String getSMSMaxLink(String mobile,String text){

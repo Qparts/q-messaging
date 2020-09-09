@@ -22,7 +22,14 @@ public enum SmsPurpose {
         @Override
         public String getBody(String ...values){
             String sender = values[0];
-            return "Your Purchase order is accepted by: " + sender + ", please visit  " + AppConstants.getPurchaseOrdersSubmitLink();
+            return "Your Purchase order is accepted by: " + sender + ", please visit  " + AppConstants.getPurchaseOrdersSentLink();
+        }
+    },
+    POREFUSE("purchase-order-refuse"){
+        @Override
+        public String getBody(String ...values){
+            String sender = values[0];
+            return "Your Purchase order is refused by: " + sender + ", please visit  " + AppConstants.getPurchaseOrdersSentLink();
         }
     },
 
