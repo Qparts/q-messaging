@@ -10,7 +10,7 @@ public class AppConstants {
 
     private static final String SMS_MAX_PROVIDER_HOST="https://www.jawalbsms.ws/api.php/sendsms?";
     private static final String SMS_MAX_PROVIDER_USERNAME="qetaa";
-    private static final String SMS_MAX_PROVIDER_PASSWORD="qetaa13AyMg";
+    private static final String SMS_MAX_PROVIDER_PASSWORD="1qetaa13AyMg";
     private static final String SMS_MAX_PROVIDER_SENDER="qetaa.com";
 
     public final static String getPasswordResetLink(String code ){

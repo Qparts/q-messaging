@@ -63,6 +63,20 @@ public class ApiV1 {
         return Response.status(200).build();
     }
 
+
+    @GET
+    @Path("test-sms")
+    public Response sendTestSms(){
+        String purpose = "signup";
+        String mobile = "966556575585";
+        String[] arr = new String[]{"1234"};
+        validateValues(purpose, mobile);
+        validateEnum(SmsPurpose.class, purpose);
+        String body = SmsPurpose.fromString(purpose).getBody(arr);
+        async.sendSms2(mobile, body);
+        return Response.status(200).build();
+    }
+
     @InternalApp
     @POST
     @Path("sms")
@@ -75,7 +89,7 @@ public class ApiV1 {
         validateValues(purpose, mobile);
         validateEnum(SmsPurpose.class, purpose);
         String body = SmsPurpose.fromString(purpose).getBody(arr);
-        async.sendSms(mobile, body);
+        async.sendSms2(mobile, body);
         return Response.status(200).build();
     }
 
