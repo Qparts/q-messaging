@@ -55,7 +55,7 @@ public class AsyncService {
 
 
     @Asynchronous
-    public void sendSms2(String mobile, String text){
+    public void sendSms(String mobile, String text){
         try{
             String textEncoded = URLEncoder.encode(text, StandardCharsets.UTF_8);
             String url = AppConstants.getSMSMaxLink(mobile, textEncoded);
@@ -76,28 +76,6 @@ public class AsyncService {
         sms.setHttpStatus(status);
         sms.setMobile(mobile);
         dao.persist(sms);
-    }
-
-
-    @Asynchronous
-    public void sendSms(String mobileFull, String text) {
-        try {
-            String textEncoded = URLEncoder.encode(text, StandardCharsets.UTF_8);
-            String url = AppConstants.getSMSMaxLink(mobileFull, textEncoded);
-            URL obj = new URL(url);
-            HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-            con.setRequestMethod("GET");
-            int responseCode = con.getResponseCode();
-            BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
-            String inputLine;
-            StringBuffer response = new StringBuffer();
-            while ((inputLine = in.readLine()) != null) {
-                response.append(inputLine);
-            }
-            in.close();
-        } catch (Exception ignore) {
-
-        }
     }
 
 

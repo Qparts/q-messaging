@@ -9,8 +9,10 @@ import q.rest.messaging.filter.annotation.UserJwt;
 import q.rest.messaging.filter.annotation.ValidApp;
 import q.rest.messaging.helper.EmailPurpose;
 import q.rest.messaging.helper.EnumUtil;
+import q.rest.messaging.helper.Helper;
 import q.rest.messaging.helper.SmsPurpose;
 import q.rest.messaging.model.ContactUs;
+import q.rest.messaging.model.SMSHistory;
 
 import javax.ejb.EJB;
 import javax.servlet.ServletContext;
@@ -45,6 +47,18 @@ public class ApiV1 {
         return Response.status(200).entity(contactUsList).build();
     }
 
+
+    @UserJwt
+    @GET
+    @Path("sms-history/year/{year}/month/{month}")
+    public Response getSmsHistory(@PathParam(value = "year") int year, @PathParam(value = "month") int month){
+        Date from = Helper.getFromDate(month, year);
+        Date to = Helper.getToDate(month, year);
+        String sql = "select b from SMSHistory b where b.created between :value0 and :value1 order by b.created desc";
+        List<SMSHistory> list = dao.getJPQLParams(SMSHistory.class, sql, from , to);
+        return Response.ok().entity(list).build();
+    }
+
     @UserJwt
     @PUT
     @Path("contact-us")
@@ -63,20 +77,6 @@ public class ApiV1 {
         return Response.status(200).build();
     }
 
-
-    @GET
-    @Path("test-sms")
-    public Response sendTestSms(){
-        String purpose = "signup";
-        String mobile = "966556575585";
-        String[] arr = new String[]{"1234"};
-        validateValues(purpose, mobile);
-        validateEnum(SmsPurpose.class, purpose);
-        String body = SmsPurpose.fromString(purpose).getBody(arr);
-//        async.sendSms2(mobile, body);
-        return Response.status(200).build();
-    }
-
     @InternalApp
     @POST
     @Path("sms")
@@ -89,7 +89,7 @@ public class ApiV1 {
         validateValues(purpose, mobile);
         validateEnum(SmsPurpose.class, purpose);
         String body = SmsPurpose.fromString(purpose).getBody(arr);
-        async.sendSms2(mobile, body);
+        async.sendSms(mobile, body);
         return Response.status(200).build();
     }
 

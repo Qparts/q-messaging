@@ -6,6 +6,25 @@ import java.util.Map;
 
 public enum EmailPurpose {
 
+    API_TOKEN("api-token") {
+        @Override
+        public String getTemplatePath() {
+            return AppConstants.REGISTRATION_CODE_TEMPLATE;
+        }
+
+        @Override
+        public String getSubject() {
+            return "VALID API TOKEN";
+        }
+
+        public Map<String,Object> getValuesMap(String ...values){
+            Map<String,Object> vmap = new HashMap<>();
+            vmap.put("name", "Fareed");
+            vmap.put("code", values[0]);
+            return vmap;
+        }
+    },
+
     INVOICE("subscription-invoice"){
         @Override
         public String getTemplatePath() {

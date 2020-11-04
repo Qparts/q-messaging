@@ -6,6 +6,7 @@ import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.YearMonth;
 import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Date;
@@ -38,12 +39,26 @@ public class Helper {
     }
 
 
-    public LocalDate convertToLocalDate(Date dateToConvert) {
+    public static Date getToDate(int month, int year) {
+        YearMonth ym = YearMonth.of(year,month);
+        LocalDate to = ym.atEndOfMonth();
+        return convertToDate(to);
+    }
+
+    public static Date getFromDate(int month, int year) {
+        YearMonth ym = YearMonth.of(year, month);
+        LocalDate from = ym.atDay(1);
+        return convertToDate(from);
+    }
+
+
+
+    public static LocalDate convertToLocalDate(Date dateToConvert) {
         return LocalDate.ofInstant(
                 dateToConvert.toInstant(), ZoneId.systemDefault());
     }
 
-    public Date convertToDate(LocalDate dateToConvert) {
+    public static Date convertToDate(LocalDate dateToConvert) {
         return Date.from(dateToConvert.atStartOfDay()
                 .atZone(ZoneId.systemDefault())
                 .toInstant());
