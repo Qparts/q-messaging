@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml"
+    xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="x-apple-disable-message-reformatting">
+    <title>Q.parts - Day After Greeting</title>
+    ​
+    <style>
+        html,
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            direction: rtl;
+            background-color: #f7f7f7;
+            margin: 0 auto;
+            padding: 0;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        .email-container {
+            width: 600px;
+            margin: auto;
+        }
+
+        /* Header */
+        .email-container header {
+            text-align: right;
+            padding: 10px 0;
+        }
+
+        .email-container header img {
+            width: 100px;
+        }
+
+        /* Email Text */
+        .email-container .email-text {
+            background-color: #fff;
+            list-style: none;
+            padding: 0;
+            border-radius: 15px;
+        }
+
+        .email-container .email-text img {
+            width: 100%;
+            margin-top: 25px;
+        }
+
+        /* Features */
+        .email-container .features .features-cont {
+            margin-top: 40px;
+        }
+
+        .email-container .features ul li {
+            margin-bottom: 10px;
+        }
+
+        .email-container .features ul li:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .email-container .features ul li strong {
+            margin-bottom: 10px;
+            display: inline-block;
+            color: #14455B;
+        }
+
+        /* Imp Links */
+        .email-container .imp-links a {
+            margin-right: 10px;
+        }
+
+        /* Footer */
+        footer {
+            color: #888;
+        }
+
+        footer .foot-cont {
+            list-style: none;
+            padding: 0;
+        }
+
+        footer .foot-cont .useful-links {
+            text-align: center;
+        }
+
+        footer .foot-cont .useful-links a {
+            border-right: 2px solid #ccc;
+            padding: 0 10px;
+        }
+
+        footer .foot-cont .useful-links a:first-of-type {
+            border: 0;
+        }
+
+        footer .foot-cont .help-user ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        footer .foot-cont .help-user ul li {
+            display: inline-block;
+        }
+
+        footer .foot-cont .help-user ul li:nth-of-type(2) {
+            margin: 0 8px;
+        }
+
+        footer .foot-cont .help-user ul a {
+            padding: 0;
+        }
+
+        footer .foot-cont .help-user ul,
+        footer .foot-cont .useful-links p {
+            font-size: 15px;
+        }
+
+        footer .foot-cont .useful-links p,
+        footer .foot-cont .help-user ul {
+            margin-top: 10px;
+        }
+
+        /* Main Style */
+        .email-container .text-col {
+            color: #343535;
+        }
+
+        .email-container .padd {
+            padding: 30px;
+        }
+
+        .email-container .last-para {
+            margin: 30px 0 0;
+        }
+
+        .email-container ul {
+            margin: 0;
+        }
+
+        .bordr-top {
+            border-top: 5px solid #f7f7f7
+        }
+
+        h5 {
+            font-size: 20px;
+            margin: 0 0 20px;
+            color: #14455B;
+        }
+
+        strong,
+        h5 {
+            font-weight: 500;
+        }
+
+        a {
+            text-decoration: none;
+            color: #F20505;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        /* Responsive (Media Query) */
+        @media(min-width: 300px) and (max-width: 374px) {
+            .email-container .padd {
+                padding: 30px 15px;
+            }
+
+            footer .foot-cont .useful-links a {
+                font-size: 14px;
+            }
+        }
+
+        @media(min-width: 300px) and (max-width: 378px) {
+            footer .foot-cont .help-user ul {
+                display: block;
+            }
+
+            footer .foot-cont .help-user ul li:nth-of-type(2) {
+                display: none;
+            }
+        }
+
+        @media(min-width: 300px) and (max-width: 437px) {
+            .email-container h5 {
+                font-size: 18px;
+            }
+
+            .email-container .text-col {
+                font-size: 15px;
+            }
+
+            footer .foot-cont .help-user ul,
+            footer .foot-cont .useful-links p {
+                font-size: 14px;
+            }
+        }
+
+        @media(min-width: 300px) and (max-width: 502px) {
+            .imp-links ul li {
+                margin-bottom: 10px;
+            }
+
+            .imp-links ul li:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+
+        @media(min-width: 300px) and (max-width: 619px) {
+            .email-container {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="email-container">
+        <header>
+            <a href="https://www.qvm.parts/" target="_blank"><img
+                    src="https://q-images.ams3.digitaloceanspaces.com/qvm.svg" alt="QVM"></a>
+        </header>
+        <ul class="email-text">
+            <li class="padd">
+                <h5>شريكنا العزيز $name,</h5>
+                <p class="text-col"> بحمد الله تعتبر منصة التجار QVM اليوم الوجهة الأولى لعدد كبير من تجار قطع الغيار.
+                </p>
+                <img src="https://q-images.ams3.digitaloceanspaces.com/poster.jpg" alt="Icon">
+            </li>
+            <li class="features padd bordr-top">
+                <h5> انضمامك لمنصة التجار يعد نقلة إيجابية في طريقة سير اعمالك ومبيعاتك، نحن نعدك بالكثير من المميزات
+                    التي ستجعل العمل في المنصة جزء من نظام عملك المعتاد لأسباب عدة، مثلا؛</h5>
+                <div class="features-cont">
+                    <ul>
+                        <li>
+                            <strong>سرعة الحصول على المعلومة</strong>
+                            <p class="text-col">الهدف الأساسي هو تسريع عملك، بدلًا من البحث لساعات طويلة عن مكان وسعر
+                                القطعة، الآن خلال ثواني تستطيع معرفة القطع المتوفرة لدى جميع الموردين بالمنصة، حيث تم
+                                تطوير المنصة بأفضل لغات البرمجة التي تجعل سرعة البحث عالية.</p>
+                        </li>
+                        <li>
+                            <strong>سهولة الاستخدام</strong>
+                            <p class="text-col">تم تصميم واجهة الموقع بشكل بسيط جداً لتناسب عمل الجميع، حيث تستطيع تصفح
+                                المنصة من أي جهاز كمبيوتر فقط تحتاج الى انترنت.</p>
+                        </li>
+                        <li>
+                            <strong>وصول أكبر</strong>
+                            <p class="text-col">ينضم يوميا عدد كبير من التجار من جميع انحاء العالم، وجودك في المنصة
+                                سيزيد من شبكة عملاءك لتحقق مبيعات أكبر.</p>
+                        </li>
+                        <li>
+                            <strong>أرباح أكثر</strong>
+                            <p class="text-col">تعقد صفقات يومية بين التجار في المنصة بمبالغ تتجاوز ٣٥٠،٠٠٠ ريال سعودي،
+                                استفد الآن واحصل على أفضل الأسعار والعروض.</p>
+                        </li>
+                    </ul>
+                    <p class="text-col last-para">
+                        "لدينا خبرة في مجال قطع الغيار تجاوزت ٥٠ عام، حيث اجتمعت الخبرة بالمجال مع الخبرة بالتقنية و
+                        أجرينا الكثير من الأبحاث والتجارب واجتمع عدد كبير من المستشارين والمتخصصين بالمجال لتصميم هذه
+                        الخصائص النوعية والعملية التي ستعمل على تحسين كفاءة عملك"
+                    </p>
+                </div>
+            </li>
+            <li class="imp-links padd bordr-top">
+                <h5>لعرض وتصفح الشروحات يمكنك تصفح الفيديوهات لأبرز الخصائص:</h5>
+                <ul class="text-col">
+                    <li>طريقة البحث عن القطع والتواصل مع الموردين <a
+                            href="https://www.youtube.com/watch?v=g74b05c3Pqw&list=PLSMtnVW_xkN61oyyi-ApvRAnN_ZyKA3-h&index=1&ab_channel=QvmParts"
+                            target="_blank">اضغط هنا</a> </li>
+                    <li>طريقة رفع المخزون <a
+                            href="https://www.youtube.com/watch?v=m2Ugih23TwU&list=PLSMtnVW_xkN61oyyi-ApvRAnN_ZyKA3-h&index=3&ab_channel=QvmParts"
+                            target="_blank">اضغط هنا</a> </li>
+                    <li> استخدام كتالوج السيارات المربوط <a
+                            href="https://www.youtube.com/watch?v=H3cu_zhDWjw&list=PLSMtnVW_xkN61oyyi-ApvRAnN_ZyKA3-h&index=4&ab_channel=QvmParts"
+                            target="_blank">اضغط هنا</a></li>
+                    <li> طريقة رفع العروض الخاصة <a
+                            href="https://www.youtube.com/watch?v=5Wq0FgDHcRE&list=PLSMtnVW_xkN61oyyi-ApvRAnN_ZyKA3-h&index=6&t=14s&ab_channel=QvmParts"
+                            target="_blank">اضغط هنا</a></li>
+                    <li>متابعة تسعيرات العملاء <a
+                            href="https://www.youtube.com/watch?v=zMveXA-ENiQ&list=PLSMtnVW_xkN61oyyi-ApvRAnN_ZyKA3-h&index=6&ab_channel=QvmParts"
+                            target="_blank">اضغط هنا</a></li>
+                </ul>
+            </li>
+        </ul>
+        <footer>
+            <ul class="foot-cont">
+                <li class="useful-links padd">
+                    <a href="https://www.qvm.parts/" target="_blank">الرئيسية </a>
+                    <a href="https://www.qvm.parts/price" target="_blank">الاسعار </a>
+                    <a href="https://www.qvm.parts/contactus" target="_blank">اتصل بنا</a>
+                    <div class="help-user">
+                        <p>سيكون فريق خدمة العملاء لدينا أكثر من سعداء لمساعدتك وسيكون متاحًا من السبت الى الخميس من
+                            الساعه
+                            <span>8 ص - 4 م </span>
+                        </p>
+                        <ul>
+                            <li>أتصال / واتساب: 90551121493</li>
+                            <li> - </li>
+                            <li> البريد الإلكتروني: <a href="">support@qvm.parts</a> </li>
+                        </ul>
+                    </div>
+                    <p> طريق الأمير متيب، الواحة، 34252 الدمام، المملكة العربية السعودية | (996) 508
+                        448 856</p>
+                </li>
+            </ul>
+        </footer>
+    </div>
+</body>
+
+</html>
