@@ -152,8 +152,9 @@ public enum EmailPurpose {
         public Map<String,Object> getValuesMap(String ...values){
             String code = values[0];
             String name = values[1];
+            String base = values[2];
             Map<String, Object> vmap = new HashMap<>();
-            vmap.put("passwordResetLink", AppConstants.getPasswordResetLink(code));
+            vmap.put("passwordResetLink", AppConstants.getPasswordResetLink(code, base));
             vmap.put("firstName", name);
             return vmap;
         }

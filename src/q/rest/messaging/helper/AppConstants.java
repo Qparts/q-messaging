@@ -7,14 +7,18 @@ public class AppConstants {
     public final static String SMTP_SERVER = "smtp.zoho.com";
     public final static String INTERNAL_APP_SECRET = "INTERNAL_APP";
     private final static String QVM_WEBSITE = "https://www.qvm.parts";
+    private final static String QSTOCK_WEBSITE = "https://www.qstock.parts";
 
     private static final String SMS_MAX_PROVIDER_HOST="https://www.jawalbsms.ws/api.php/sendsms?";
     private static final String SMS_MAX_PROVIDER_USERNAME="qetaa";
     private static final String SMS_MAX_PROVIDER_PASSWORD="1qetaa13AyMg";
     private static final String SMS_MAX_PROVIDER_SENDER="qetaa.com";
 
-    public final static String getPasswordResetLink(String code ){
-        return QVM_WEBSITE + "/password-reset?code=" + code;
+    public final static String getPasswordResetLink(String code, String baseName){
+        String base = QVM_WEBSITE;
+        if(baseName.equals("qstock"))
+            base = QSTOCK_WEBSITE;
+        return base + "/password-reset?code=" + code;
     }
 
     public final static String getPurchaseOrdersSubmitLink(){

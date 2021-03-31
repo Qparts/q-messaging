@@ -37,7 +37,9 @@ public enum SmsPurpose {
         @Override
         public String getBody(String ...values) {
             String code = values[0];
-            return AppConstants.getPasswordResetLink(code);
+            String name = values[1];
+            String base = values[2];
+            return AppConstants.getPasswordResetLink(code, base);
         }
     };
 
