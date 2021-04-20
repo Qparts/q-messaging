@@ -43,7 +43,7 @@ public class ApiV1 {
     @Path("contact-us/pending")
     public Response getPendingContactUs() {
         String sql = "select b from ContactUs b where b.status = :value0 order by b.created asc";
-        List<ContactUs> contactUsList = dao.getJPQLParamsMax(ContactUs.class, sql, 'N');
+        List<ContactUs> contactUsList = dao.getJPQLParams(ContactUs.class, sql, 'N');
         return Response.status(200).entity(contactUsList).build();
     }
 
