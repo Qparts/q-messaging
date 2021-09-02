@@ -5,6 +5,7 @@ import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.VelocityEngine;
 import q.rest.messaging.dao.DAO;
 import q.rest.messaging.filter.annotation.InternalApp;
+import q.rest.messaging.filter.annotation.SubscriberJwt;
 import q.rest.messaging.filter.annotation.UserJwt;
 import q.rest.messaging.filter.annotation.ValidApp;
 import q.rest.messaging.helper.EmailPurpose;
@@ -48,6 +49,17 @@ public class ApiV1 {
     }
 
 
+    @ValidApp
+    @POST
+    @Path("contact-us")
+    public Response createContactUs(ContactUs contactUs) {
+        contactUs.setCreated(new Date());
+        contactUs.setStatus('N');
+        dao.persist(contactUs);
+        return Response.status(200).build();
+    }
+
+
     @UserJwt
     @GET
     @Path("sms-history/year/{year}/month/{month}")
@@ -65,15 +77,6 @@ public class ApiV1 {
     public Response updateContactUs(ContactUs contactUs) {
         contactUs.setStatus('P');//Processed
         dao.update(contactUs);
-        return Response.status(200).build();
-    }
-
-    @ValidApp
-    @POST
-    @Path("contact-us")
-    public Response createContactUs(ContactUs contactUs) {
-        contactUs.setCreated(new Date());
-        dao.persist(contactUs);
         return Response.status(200).build();
     }
 
