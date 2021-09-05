@@ -5,7 +5,6 @@ import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.VelocityEngine;
 import q.rest.messaging.dao.DAO;
 import q.rest.messaging.filter.annotation.InternalApp;
-import q.rest.messaging.filter.annotation.SubscriberJwt;
 import q.rest.messaging.filter.annotation.UserJwt;
 import q.rest.messaging.filter.annotation.ValidApp;
 import q.rest.messaging.helper.EmailPurpose;
@@ -47,7 +46,6 @@ public class ApiV1 {
         List<ContactUs> contactUsList = dao.getJPQLParams(ContactUs.class, sql, 'N');
         return Response.status(200).entity(contactUsList).build();
     }
-
 
     @ValidApp
     @POST

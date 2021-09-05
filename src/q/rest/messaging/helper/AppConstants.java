@@ -7,7 +7,7 @@ public class AppConstants {
     public final static String SMTP_SERVER = "smtp.zoho.com";
     public final static String INTERNAL_APP_SECRET = "INTERNAL_APP";
     private final static String QVM_WEBSITE = "https://www.qvm.parts";
-    private final static String QSTOCK_WEBSITE = "https://www.qstock.parts";
+    private final static String QSTOCK_WEBSITE = "https://stock.qvm.parts";
 
     private static final String SMS_MAX_PROVIDER_HOST="https://www.jawalbsms.ws/api.php/sendsms?";
     private static final String SMS_MAX_PROVIDER_USERNAME="qetaa";
