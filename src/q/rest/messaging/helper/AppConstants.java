@@ -3,7 +3,7 @@ package q.rest.messaging.helper;
 public class AppConstants {
 
     public final static String EMAIL_ADDRESS = "no-reply@qetaa.com";
-    public final static String PASSWORD = "qetaa3!Cs@";
+    public final static String PASSWORD = "SM9]V,xzKQ?8<zhp";
     public final static String SMTP_SERVER = "smtp.zoho.com";
     public final static String INTERNAL_APP_SECRET = "INTERNAL_APP";
     private final static String QVM_WEBSITE = "https://www.qvm.parts";
