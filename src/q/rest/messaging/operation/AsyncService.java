@@ -44,12 +44,14 @@ public class AsyncService {
         try {
             MimeMessage message = new MimeMessage(session);
             message.setFrom(new InternetAddress(AppConstants.EMAIL_ADDRESS));
+            System.out.println("sending email to " + email);
             message.addRecipient(Message.RecipientType.TO, new InternetAddress(email));
             message.setSubject(subject);
             message.setContent(body, "text/html; charset=utf-8");
             Transport.send(message);
         } catch (MessagingException ex) {
-
+            System.out.println("Error in sending email");
+            ex.printStackTrace();
         }
     }
 
